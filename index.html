@@ -1,151 +1,78 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>帖子區塊</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style type="text/css">
-		body {
-			background-color: #FDF1F1;
-			margin: 0;
-			padding: 0;
-		}
-
-		.post {
-			margin: 20px auto;
-			width: 90%;
-			max-width: 600px;
-			background-color: #FFFFFF;
-			padding: 20px;
-			border-radius: 10px;
-			box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.1);
-		}
-
-		.post img {
-			max-width: 100%;
-			height: auto;
-			border-radius: 10px;
-		}
-
-		.post .user-info {
-			display: flex;
-			align-items: center;
-			margin-bottom: 10px;
-		}
-
-		.post .user-info img {
-			width: 50px;
-			height: 50px;
-			border-radius: 50%;
-			margin-right: 10px;
-		}
-
-		.post .user-info .username {
-			color: #756F72;
-			font-weight: bold;
-		}
-
-		.post .like-btn {
-			display: inline-block;
-			cursor: pointer;
-		}
-
-		.post .like-btn .heart-icon {
-			font-size: 24px;
-			color: #B2B2B2;
-		}
-
-		.post .like-btn.liked .heart-icon {
-			color: #FFB6C1;
-		}
-
-		.post .like-count {
-			margin-left: 10px;
-			font-size: 18px;
-			color: #756F72;
-		}
-
-		.post .title {
-			font-size: 24px;
-			margin-bottom: 10px;
-			color: #756F72;
-		}
-
-		.post .description {
-			font-size: 18px;
-			margin-bottom: 10px;
-			color: #8F8A8E;
-		}
-
-		.post .comments {
-			font-size: 16px;
-		}
-
-		.post .comments .comment {
-			margin-bottom: 5px;
-		}
-
-		.post .comments .comment .comment-text {
-			display: inline;
-			color: #8F8A8E;
-		}
-
-		.post .comments .comment .comment-author {
-			display: inline;
-			margin-right: 5px;
-			font-weight: bold;
-			color: #756F72;
-		}
-
-		/* 添加媒體查詢以增加 body 的邊距 */
-		@media (max-width: 768px) {
-			body {
-				padding: 0 20px;
-			}
-		}
-	</style>
+    <title>帖子區塊</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://instagram.com/static/images/ico/favicon-192.png/68d99ba29cc8.png" sizes="192x192">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- Swiper JavaScript -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var swiper = new Swiper('.swiper-container', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    });
+</script>
+
 <body>
-	<div class="post">
-		<div class="user-info">
-			<img src="https://via.placeholder.com/50x50" alt="User avatar">
-			<span class="username">John Doe</span>
-		</div>
-		<img src="https://via.placeholder.com/600x400" alt="Post image">
-		<div class="like-btn">
-			<span class="heart-icon">&#9825;</span>
-		</div>
-	
+    <div class="post">
+        <div class="user-info">
+            <a href="https://www.instagram.com/littlenewfriend/" target="_blank">
+                <img src="https://via.placeholder.com/50x50" alt="User avatar">
+                <span class="username">John Doe</span>
+            </a>
+        </div>
 
+        <!-- Swiper container -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <img src="https://via.placeholder.com/600x400" alt="Post image 1">
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <img src="https://via.placeholder.com/600x400/FFCC00" alt="Post image 2">
+                </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <img src="https://via.placeholder.com/600x400/339966" alt="Post image 3">
+                </div>
+            </div>
+        </div>
+        <!-- Pagination Container -->
+        <div class="pagination-container" style="position: relative;">
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
 
-		<span class="like-count">0</span>
-		<div class="title">Lorem ipsum dolor sit amet</div>
-		<div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed vestibulum nibh.
-		</div>
-		<div class="comments">
-			<div class="comment">
-				<span class="comment-author">Jane</span>
-				<span class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-			</div>
-		</div>
-	</div>
-	<script type="text/javascript">
-		var likeBtn = document.querySelector('.like-btn');
-		var likeCount = document.querySelector('.like-count');
-		var isLiked = false;
-
-		likeBtn.addEventListener('click', function () {
-			if (isLiked) {
-				likeBtn.classList.remove('liked');
-				likeCount.textContent--;
-			} else {
-				likeBtn.classList.add('liked');
-				likeCount.textContent++;
-			}
-
-			isLiked = !isLiked;
-		});
-	</script>
-
+        <div class="like-btn" style="position: relative;">
+            <span class="heart-icon" style="color: red;">&#9829;</span>
+        </div>
+        <span class="like-count">0</span>
+        <div class="title">Lorem ipsum dolor sit amet</div>
+        <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed vestibulum nibh.
+        </div>
+        <div class="comments">
+            <div class="comment">
+                <span class="comment-author">Jane</span>
+                <span class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
 </body>
 
 </html>

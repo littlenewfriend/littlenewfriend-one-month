@@ -1,0 +1,182 @@
+body {
+    background-color: #FDF1F1;
+    margin: 0;
+    padding: 0;
+}
+
+.post {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.1);
+}
+
+.post img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.post .user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.post .user-info a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.post .user-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.post .user-info .username {
+    color: #756F72;
+    font-weight: bold;
+    text-decoration: none; /* 移除底線 */
+}
+
+.post .like-btn {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.post .like-btn .heart-icon {
+    font-size: 24px;
+    color: red;
+}
+
+.post .like-count {
+    margin-left: 10px;
+    font-size: 18px;
+    color: #756F72;
+}
+
+.post .title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #756F72;
+}
+
+.post .description {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #8F8A8E;
+}
+
+.post .comments {
+    font-size: 16px;
+}
+
+.post .comments .comment {
+    margin-bottom: 5px;
+}
+
+.post .comments .comment .comment-text {
+    display: inline;
+    color: #8F8A8E;
+}
+
+.post .comments .comment .comment-author {
+    display: inline;
+    margin-right: 5px;
+    font-weight: bold;
+    color: #756F72;
+}
+/* 添加媒體查詢以增加 body 的邊距 */
+@media (max-width: 768px) {
+    body {
+        padding: 0 20px;
+    }
+}
+
+@keyframes plusOne {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+}
+
+.plus-one {
+    position: absolute;
+    font-size: 16px;
+    color: #FF8A80;
+    animation: plusOne 1s ease-out;
+}
+
+/* Swiper styles */
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #756F72;
+  }
+
+  .post .swiper-container {
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  /* Swiper 分頁器樣式 */
+.swiper-pagination {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  .swiper-pagination-bullet {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #aaa;
+    border-radius: 50%;
+    margin: 0 4px;
+    cursor: pointer;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: #555;
+  }
+
+  .swiper-wrapper-container {
+    position: relative;
+  }
+    
+  
+  .swiper-pagination {
+    text-align: center;
+    margin-bottom: 20px;
+  }
