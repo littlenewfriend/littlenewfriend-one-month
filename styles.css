@@ -118,7 +118,12 @@ body {
 }
 
 /* Swiper styles */
-.swiper-container {
+.swiper-container-1 {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+  }
+  .swiper-container-2 {
     width: 100%;
     height: 100%;
     margin-bottom: 20px;
@@ -145,7 +150,7 @@ body {
     color: #756F72;
   }
 
-  .post .swiper-container {
+  .post .swiper-container-1 {
     overflow: hidden;
     border-radius: 10px;
   }
@@ -176,7 +181,32 @@ body {
   }
     
   
-  .swiper-pagination {
+  .swiper-pagination-1 {
     text-align: center;
+  }
+
+  .swiper-pagination-2 {
+    text-align: center;
+  }
+
+  .post .swiper-container-2 {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+
+/* ... 其他CSS代码保持不变 ... */
+
+  
+  .pagination-container-1 {
+    position: relative;
     margin-bottom: 20px;
   }
+  
+  .pagination-container-2 {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  
+  
